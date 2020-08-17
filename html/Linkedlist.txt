@@ -1,0 +1,232 @@
+/* LinkedList implementation using JAVA */
+
+/*Test program */
+package datastructure;
+import java.util.*;
+public class Datastructure {
+
+    
+    public static void main(String[] args) {
+        System.out.println("welcome to Linkedlist operations:");
+               
+                        Scanner sc=new Scanner(System.in);
+                        LinkedList list=new LinkedList();
+                    
+                        
+                        while(true)
+                        {
+                        System.out.println("1)Insert,2)Display,3)InsertAt,4)Delete,5)update,6)Middle of list,7)Reverse List");
+                        System.out.println("enter choice:");
+                         int choice=sc.nextInt();
+                        switch(choice)
+                        {
+                            case 1: System.out.println("enter the data to be inserted:");
+                                    int data=sc.nextInt();
+                                    list.insert(data);
+                                    break;
+                            case 2: list.display();
+                                    break;
+                            case 3: System.out.println("enter the data you want to insert:");
+                                    int num=sc.nextInt();
+                                    System.out.println("enter the index where you want to insert:");
+                                    int index=sc.nextInt();
+                                    list.insertAt(index,num);
+                                    break;
+                            case 4: System.out.println("enter the data you want to delete:");
+                                    int val=sc.nextInt();
+                                    list.delete(val);
+                                    break;
+                            case 5: System.out.println("enter the data you want to update:");
+                                    int tim=sc.nextInt();
+                                    System.out.println("enter the new data:");
+                                    int replace=sc.nextInt();
+                                    list.update(tim,replace);
+                                    break;
+                            case 6: list.middleNode();
+                                    break;
+                            case 7: list.reverseNode();
+                                    break;
+                            default: System.out.println("invalid choice");
+
+
+                        }
+                        }
+                        
+
+         
+    }
+    
+}
+
+/*LinkedList class */
+package datastructure;
+
+
+public class LinkedList {
+        Node head;
+   public void insert(int data)
+    {
+        Node node=new Node();
+        node.data=data;
+        node.next=null;
+        if(head==null)
+        {
+            head=node;
+        }
+        else
+        {
+            Node n=head;
+            while(n.next!=null)
+            {
+                n=n.next;
+            }
+            n.next=node;
+        }
+       
+    }
+   
+   public void display()
+   {
+       if(head==null)
+       {
+           System.out.println("empty list!");
+
+       }
+       else
+       {   
+       System.out.println("The nodes in the list are:");
+
+       Node n=head;
+       while(n.next!=null)
+       {
+           System.out.println(n.data);
+           n=n.next;
+       }
+        System.out.println(n.data);
+   }
+}
+   public void insertAt(int index,int data)
+   {
+       Node n=head;
+       if(index==0)
+       {
+        Node node=new Node();
+        node.data=data;
+        node.next=null;
+        node.next=head;
+        head=node;
+       }
+       else{
+       for(int i=0;i<index-1;i++)
+       {
+           n=n.next;
+       }
+        Node node=new Node();
+        node.data=data;
+        node.next=null;
+        node.next=n.next;
+        n.next=node;
+       }
+    
+    
+   }
+   public void delete(int data)
+   {
+       if(head==null)
+       {
+          System.out.println("No nodes in list to delete");
+
+       }
+       else if(data==head.data)
+       {
+           Node n=head;
+           head=n.next;
+           n=null;
+       }
+       else{
+       Node n=head;
+       while(n.data!=data)
+       {
+           n=n.next;
+       }
+       Node nd=head;
+       while(nd.next!=n)
+       {
+           nd=nd.next;
+       }
+     nd.next=n.next;
+     n=null;
+   }
+}
+     public void update(int data,int replace)
+     {
+         if(head==null)
+         {
+            System.out.println("No nodes in list to update");
+           
+         }
+         else
+         {
+             Node n=head;
+             while(n.data!=data)
+             {
+                 n=n.next;
+             }
+             n.data=replace;
+         }
+     }
+   public void middleNode()
+    {
+        Node slowPtr=head;
+          Node fastPtr=head;
+          
+          while(fastPtr!=null && fastPtr.next!=null)
+          {
+              slowPtr=slowPtr.next;
+              fastPtr=fastPtr.next.next;
+          }
+          
+          System.out.println("The middle node of the list is:"+    slowPtr.data);
+
+    }
+   public void reverseNode()
+   {
+       if(head==null)
+       {
+                 System.out.println("Empty list:");
+ 
+       }
+       Node curr=head;
+       Node prev=null;
+       Node next=null;
+       while(curr!=null)
+       {
+       next=curr.next;
+       curr.next=prev;
+       prev=curr;
+       curr=next;
+       }
+       head=prev;
+       System.out.println("The reversed list is:");
+       Node n=head;
+       while(n!=null)
+       {
+             System.out.println(n.data);
+             n=n.next;
+       }
+       
+   }
+   
+}
+
+/* Node class */
+package datastructure;
+
+
+public class Node {
+    int data;
+    Node next;
+}
+
+
+
