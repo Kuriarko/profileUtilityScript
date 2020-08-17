@@ -1,70 +1,14 @@
-###################
-What is CodeIgniter
-###################
+This web application is my live project for the client-Mr.Babu an independent record label owned by Hindustan Records and Smoke Inc. This is a web project developed with Php framework Codeigniter.It follows MVC architecture. The functionalities of this web application are:
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
 
-*******************
-Release Information
-*******************
+1)The clients of Mr.Babu can open and view the agreements.
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+2)He/she can register with their credentials and upload their image and signature.
 
-**************************
-Changelog and New Features
-**************************
+3)He will get a Thank you page after successful registration.
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+4)Their is a separate section where the admin can login and view all the submissions in a tabular format.
 
-*******************
-Server Requirements
-*******************
+5)The admin can delete or update records in the database and click and view all the applications.
 
-PHP version 5.6 or newer is recommended.
-
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
-
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+6)The admin will get links of both agreement1 and agreement 2 in each record of the table clicking on which will redirect them to a dynamic web page having the agreement details and the uploaded image and signature of the respective applicant dynamically appears in the respective section for each record.
